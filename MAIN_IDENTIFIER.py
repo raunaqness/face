@@ -8,8 +8,6 @@ from PyQt5 import QtGui
 from PyQt5.QtCore import pyqtSignal
 import os, time, json
 
-from kafka import KafkaConsumer
-
 # Global Variables
 identify = True
 record = False
@@ -76,7 +74,7 @@ class ShowVideo(QtCore.QObject):
         self.KAFKA_BROKERS = '127.0.0.1:9092'
         self.KAFKA_TOPIC = 'test'
 
-        self.consumer = KafkaConsumer(self.KAFKA_TOPIC, bootstrap_servers=self.KAFKA_BROKERS, api_version=(2, 11, 2))
+        # self.consumer = KafkaConsumer(self.KAFKA_TOPIC, bootstrap_servers=self.KAFKA_BROKERS, api_version=(2, 11, 2))
         super(ShowVideo, self).__init__(parent)
  
     @QtCore.pyqtSlot()
